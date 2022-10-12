@@ -9,11 +9,7 @@ const register = (req, res) => {
   }
   const createUserQuery = 'INSERT INTO users SET ?';
   db.query(createUserQuery, person, (err, result) => {
-
-    const getTotalQuery = 'SELECT COUNT(*) AS total FROM users';
-    db.query(getTotalQuery, (err, result1) => {
-      res.render('index', { title: 'Express', count: result1[0].total });
-    });
+    res.redirect('/');
   })
 }
 
