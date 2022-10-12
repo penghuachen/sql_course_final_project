@@ -1,5 +1,12 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  div.flex-container
+    .container
+      h1 JOIN US
+      p.lead Enter your email to join
+        strong  #{ count } #{''}
+        others on our waitlist. We are 100% not a cult.
+      form(method="POST" action='/register')
+        input.form(type="text" name="email" placeholder="Enter Your Email")
+        button Join Now
